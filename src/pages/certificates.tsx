@@ -13,7 +13,7 @@ import {
   Grid,
   Container,
   Progress,
-  Image
+  Image,
 } from "@nextui-org/react";
 import { Box } from "../components/Box";
 import { Layout } from "../components/Layout";
@@ -31,18 +31,15 @@ const Home: NextPage = () => {
         <Header />
 
         <Box css={{ px: "$12", mt: "$8", "@xsMax": { px: "$10" } }}>
-        <Image
-            
-              src="/certificate_ignite.jpg"
-              alt="Default Image"
-            />
-             <Spacer y={1} />
+          <Image src="/certificate_ignite.jpg" alt="Default Image" />
+          <Spacer y={1} />
 
-             <Image
-            
-            src="/certificate_discover.jpg"
-            alt="Default Image"
-          />
+          <Image src="/certificate_discover.jpg" alt="Default Image" />
+
+          <Spacer y={1} />
+          <Image src="certificado_js_web.jpg" alt="Default Image" />
+          <Spacer y={1} />
+          <Image src="certificado_redux.jpg" alt="Default Image" />
         </Box>
       </main>
     </Layout>
