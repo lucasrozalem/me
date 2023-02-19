@@ -4,26 +4,13 @@ import {
   Text,
   Dropdown,
   Avatar,
-  Link
+  Link,
 } from "@nextui-org/react";
-
 
 import { ColorMode } from "./ColorMode";
 import { useRouter } from "next/router";
 
-
-const collapseItems = [
-  "Profile",
-  "Dashboard",
-  "Activity",
-  "Analytics",
-  "System",
-  "Deployments",
-  "My Settings",
-  "Team Settings",
-  "Help & Feedback",
-  "Log Out",
-];
+const collapseItems = ["Currículo", "Certificados"];
 
 export default function Header() {
   const { pathname } = useRouter();
@@ -39,23 +26,28 @@ export default function Header() {
           },
         }}
       >
-        
         <Text b color="inherit" hideIn="xs">
           Lucas Rozalem
         </Text>
       </Navbar.Brand>
       <Navbar.Content
         enableCursorHighlight
-        
         activeColor="secondary"
         hideIn="xs"
         variant="highlight-rounded"
       >
-       
-        <Navbar.Link isActive={pathname === "/"} href="/" css={{marginTop: -4}}>
+        <Navbar.Link
+          isActive={pathname === "/"}
+          href="/"
+          css={{ marginTop: -4 }}
+        >
           Currículo
         </Navbar.Link>
-        <Navbar.Link isActive={pathname === "/certificates"} href="/certificates" css={{marginTop: -4}}>
+        <Navbar.Link
+          isActive={pathname === "/certificates"}
+          href="/certificates"
+          css={{ marginTop: -4 }}
+        >
           Certificados
         </Navbar.Link>
       </Navbar.Content>
@@ -70,29 +62,40 @@ export default function Header() {
         <Navbar.Item>
           <ColorMode />
         </Navbar.Item>
-     
       </Navbar.Content>
       <Navbar.Collapse disableAnimation>
-        {collapseItems.map((item, index) => (
+       
           <Navbar.CollapseItem
-            key={item}
-            activeColor="warning"
-            css={{
-              color: index === collapseItems.length - 1 ? "$error" : "",
-            }}
-            isActive={index === 2}
+           
+            activeColor="secondary"
+            // isActive={}
           >
             <Link
               color="inherit"
               css={{
                 minWidth: "100%",
               }}
-              href="#"
+              href="/"
             >
-              {item}
+              Currículo
             </Link>
           </Navbar.CollapseItem>
-        ))}
+          <Navbar.CollapseItem
+           
+            activeColor="secondary"
+            // isActive={}
+          >
+            <Link
+              color="inherit"
+              css={{
+                minWidth: "100%",
+              }}
+              href="/certificates"
+            >
+              Certificados
+            </Link>
+          </Navbar.CollapseItem>
+        
       </Navbar.Collapse>
     </Navbar>
   );
