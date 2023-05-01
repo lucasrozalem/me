@@ -18,7 +18,7 @@ import {
 import { Box } from "../components/Box";
 import { Layout } from "../components/Layout";
 
-const Home: NextPage = () => {
+const Certificates: NextPage = () => {
   return (
     <Layout>
       <Head>
@@ -31,6 +31,8 @@ const Home: NextPage = () => {
         <Header />
 
         <Box css={{ px: "$12", mt: "$8", "@xsMax": { px: "$10" } }}>
+        <Image src="/diploma.jpg" alt="Default Image" />
+        <Spacer y={1} />
           <Image src="/certificate_ignite.jpg" alt="Default Image" />
           <Spacer y={1} />
 
@@ -46,4 +48,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Certificates;
